@@ -31,7 +31,8 @@ canvas.add(new fabric.Rect({
   originX: 'left',
   originY: 'top',
   centeredRotation: true
-}));
+}).setControlsVisibility({'tl': false, 'tr': false, 'br': false, 'bl': false, 'ml': false, 'mt': false, 'mr': false, 'mb': false}));
+
 
 
 canvas.add(new fabric.Rect({
@@ -44,7 +45,7 @@ canvas.add(new fabric.Rect({
   originY: 'top',
   centeredRotation: true,
   /*hasControls: false,*/
-}));
+}).setControlsVisibility({'tl': false, 'tr': false, 'br': false, 'bl': false, 'ml': false, 'mt': false, 'mr': false, 'mb': false}));
 
 
 canvas.add(new fabric.Rect({
@@ -56,7 +57,7 @@ canvas.add(new fabric.Rect({
   originX: 'left',
   originY: 'top',
   centeredRotation: true
-}));
+}).setControlsVisibility({'tl': false, 'tr': false, 'br': false, 'bl': false, 'ml': false, 'mt': false, 'mr': false, 'mb': false}));
 
 
 canvas.add(new fabric.Rect({
@@ -68,31 +69,31 @@ canvas.add(new fabric.Rect({
   originX: 'left',
   originY: 'top',
   centeredRotation: true
-}));
+}).setControlsVisibility({'tl': false, 'tr': false, 'br': false, 'bl': false, 'ml': false, 'mt': false, 'mr': false, 'mb': false}));
 
 
 // snap to grid
 
-canvas.on('object:moving', function(options) {
+canvas.on('object:moving', function (options) {
 
   var left = Math.round(options.target.left / grid) * grid;
   left = left > 0 ? left : 0;
-  left = left <= (canvasWidth - grid - (options.target.width - grid)) ? left : (canvasWidth - grid -(options.target.width - grid));
+  left = left <= (canvasWidth - grid - (options.target.width - grid)) ? left : (canvasWidth - grid - (options.target.width - grid));
 
 
   var top = Math.round(options.target.top / grid) * grid;
   top = top > 0 ? top : 0;
-  top = top <= (canvasWidth - grid -(options.target.height - grid)) ? top : (canvasWidth - grid - (options.target.height - grid));
+  top = top <= (canvasWidth - grid - (options.target.height - grid)) ? top : (canvasWidth - grid - (options.target.height - grid));
 
   options.target.set({
     left: left,
     top: top
   });
 
-  console.log("Matriz Position:["+ top/grid + ","+left/grid +"]" );
+  console.log("Matriz Position:[" + top / grid + "," + left / grid + "]");
 });
 
-canvas.on('object:rotating', function(options) {
+canvas.on('object:rotating', function (options) {
   options.target.set({
     angle: Math.round(options.target.angle / 45) * 45
   });
