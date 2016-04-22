@@ -2,9 +2,29 @@
 <html lang="en">
 <head>
   <style>
+    @font-face {
+      font-family:'Indie Flower';
+      font-style: normal;
+      font-weight: 500;
+      src: local('Indie Flower'), local('IndieFlower'), url(http://fonts.gstatic.com/s/indieflower/v7/10JVD_humAd5zP2yrFqw6hampu5_7CjHW5spxoeN3Vs.woff2) format('woff2'), url(http://fonts.gstatic.com/s/indieflower/v7/10JVD_humAd5zP2yrFqw6qRDOzjiPcYnFooOUGCOsRk.woff) format('woff');
+    }
+    body, html {
+      margin:0;
+      padding:0;
+    }
+    #btns-display {
+      position:relative;
+      display:inline-block;
+      height:40px;
+      width:100%;
+      float:left;
+      border-bottom:1px solid black;
+      z-index:10;
+    }
     canvas {
-      border: 1px solid #ccc;
-      text-align: center;
+      position:relative;
+      display:inline-block;
+      width:100%;
     }
   </style>
   <script  src="https://rawgit.com/kangax/fabric.js/master/dist/fabric.js" ></script>
@@ -13,7 +33,7 @@
   <title>Canvas experiments</title>
 </head>
 <body>
-<canvas id="c" width="600" height="600"></canvas>
+<canvas id="fabriccanvas" ></canvas>
 <script src="./canvas-controller.js" ></script>
 </body>
 </html>
